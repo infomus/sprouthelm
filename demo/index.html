@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Home Care — Live Demo | SproutHelm</title>
+    <meta name="description" content="See the SproutHelm chat widget in action on a real agency website. Browse caregiver profiles, start conversations, and experience the product live.">
+    <link rel="icon" type="image/svg+xml" href="../sprouthelm_logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CampusThreads Widget -->
+    <script defer type="text/javascript" src="https://connect.campusthreads.co/embed.js" data-school="sprouthelm-demo" data-anchorid="ct-container" data-popcard="true"></script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --brand: #1a6b4a;
+            --brand-dark: #0f4a32;
+            --brand-light: #e8f5ef;
+            --warm: #faf8f5;
+            --text: #1a1a1a;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* Demo Banner */
+        .demo-banner {
+            background: #023020;
+            color: #fff;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+        .demo-banner a {
+            color: #90EE90;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Agency Nav */
+        .agency-nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 44px;
+            z-index: 100;
+        }
+        .agency-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .agency-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--brand);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        .agency-logo span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .agency-nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .agency-nav-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+        .agency-nav-links a:hover { color: var(--brand); }
+        .agency-cta-btn {
+            background: var(--brand);
+            color: #fff;
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        .agency-cta-btn:hover { background: var(--brand-dark); }
+
+        /* Hero */
+        .agency-hero {
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--warm) 0%, #fff 100%);
+        }
+        .agency-hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.03em;
+        }
+        .agency-hero h1 em {
+            font-style: normal;
+            color: var(--brand);
+        }
+        .agency-hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-btns .primary {
+            background: var(--brand);
+            color: #fff;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .hero-btns .secondary {
+            background: #fff;
+            color: var(--brand);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--brand);
+        }
+
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: clamp(2rem, 5vw, 4rem);
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brand);
+        }
+        .stat-item .label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Services */
+        .services {
+            padding: clamp(4rem, 8vw, 6rem) 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .services h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+        .services > p {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 3rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--warm);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--brand);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+        }
+
+        /* Team / Widget Section */
+        .team-section {
+            padding: clamp(4rem, 8vw, 6rem) 2rem;
+            background: var(--warm);
+        }
+        .team-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .team-inner h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .team-inner > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.0625rem;
+        }
+        #ct-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: clamp(4rem, 8vw, 6rem) 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonials h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--warm);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+        .testimonial-card .stars {
+            color: #f59e0b;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+        .testimonial-card blockquote {
+            font-size: 0.9375rem;
+            color: var(--text);
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card .author {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* CTA */
+        .agency-cta {
+            padding: clamp(4rem, 8vw, 6rem) 2rem;
+            background: var(--brand);
+            text-align: center;
+            color: #fff;
+        }
+        .agency-cta h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .agency-cta p {
+            opacity: 0.85;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+        }
+        .agency-cta .white-btn {
+            background: #fff;
+            color: var(--brand);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        /* Footer */
+        .agency-footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .agency-nav-links { display: none; }
+            .agency-nav .agency-cta-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        🌱 This is a <strong>live demo</strong> of the SproutHelm chat widget on a simulated agency website.
+        <a href="../">← Back to SproutHelm</a>
+    </div>
+
+    <!-- Agency Navigation -->
+    <nav class="agency-nav">
+        <div class="agency-logo">
+            <div class="agency-logo-icon">☀️</div>
+            <span>Sunrise Home Care</span>
+        </div>
+        <ul class="agency-nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Caregivers</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <a href="#" class="agency-cta-btn">Request Care</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="agency-hero">
+        <h1>Compassionate Care,<br><em>Right at Home</em></h1>
+        <p>Sunrise Home Care connects your family with experienced, vetted caregivers who treat your loved ones like their own.</p>
+        <div class="hero-btns">
+            <a href="#team" class="primary">Meet Our Caregivers</a>
+            <a href="#" class="secondary">Call (555) 012-3456</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="number">150+</div>
+            <div class="label">Active Caregivers</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">4.9★</div>
+            <div class="label">Family Rating</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">2,400+</div>
+            <div class="label">Families Served</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">24/7</div>
+            <div class="label">Available</div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <p>From daily companionship to specialized medical care, we match your family with the right caregiver.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Alzheimer's & Memory Care</h3>
+                <p>Specialized caregivers trained in dementia support, routine management, and cognitive engagement.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Post-Surgical Recovery</h3>
+                <p>Licensed nurses and aides who help patients recover safely at home after surgery or hospital stays.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Companionship & Daily Living</h3>
+                <p>Help with meals, bathing, errands, medication reminders, and genuine human connection.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Chronic Disease Management</h3>
+                <p>Ongoing care for diabetes, heart disease, COPD, and other conditions — coordinated with your doctors.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌙</div>
+                <h3>Overnight & Live-In Care</h3>
+                <p>Round-the-clock support for families who need 24/7 coverage and peace of mind.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏋️</div>
+                <h3>Physical Therapy Assistance</h3>
+                <p>Caregivers who support prescribed exercise routines and mobility goals at home.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team / Widget -->
+    <section class="team-section" id="team">
+        <div class="team-inner">
+            <h2>Chat With Our Caregivers</h2>
+            <p>Have questions? Browse our caregiver profiles below and start a real conversation — no signup required.</p>
+            <div id="ct-container"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Families Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"Maria has been caring for my mother for 6 months now. Mom lights up when she arrives. We couldn't ask for a better caregiver."</blockquote>
+                <div class="author">— Sarah K., daughter of client</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"After my husband's hip surgery, James made the recovery so much smoother. Professional, kind, and always on time."</blockquote>
+                <div class="author">— Linda M., spouse of client</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <blockquote>"The chat widget on their website made it so easy to find the right caregiver. We were matched within a day."</blockquote>
+                <div class="author">— Robert T., son of client</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="agency-cta">
+        <h2>Ready to Find the Right Caregiver?</h2>
+        <p>Chat with our team directly or call us anytime. We're here to help your family.</p>
+        <a href="#team" class="white-btn">Chat with a Caregiver</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="agency-footer">
+        <p>☀️ Sunrise Home Care — This is a demo website powered by <a href="../" style="color:var(--brand);font-weight:600;">SproutHelm</a>. Not a real agency.</p>
+        <p style="margin-top:0.5rem;">© 2026 Demo. All data is simulated.</p>
+    </footer>
+
+</body>
+</html>
