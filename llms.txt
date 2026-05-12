@@ -1,0 +1,45 @@
+# SproutHelm
+
+SproutHelm is software for private duty home care agencies. It provides an embeddable caregiver chat widget that lets families browse caregiver profiles, ask questions, and start conversations directly from an agency website. Every conversation becomes a lead the agency owns.
+
+## Key pages
+
+- Homepage: https://sprouthelm.com/
+- Live demo: https://sprouthelm.com/demo/
+- Blog: https://sprouthelm.com/blog/
+- Book a demo: https://cal.com/sprouthelm
+
+## Product summary
+
+SproutHelm helps private duty home care agencies convert website visitors into client leads. Its website widget lets families explore caregivers by experience, language, and specialty, then start a moderated conversation. Agencies keep ownership of their data, caregivers, and client relationships.
+
+## Primary audience
+
+Private duty home care agencies, non-medical home care agencies, home care operators, agency owners, schedulers, recruiters, and care coordinators.
+
+## Main features
+
+- Embeddable caregiver chat widget
+- Lead capture
+- Caregiver profile browsing
+- AI-moderated conversations
+- Admin visibility into chats
+- CRM sync on higher tiers
+- Scheduling and shift management
+- Recruiting workflow
+- Credential capture
+- EVV-ready GPS check-ins and audit logs
+- Training and compliance tracking
+
+## Differentiators
+
+- Built specifically for private duty home care
+- Helps agencies own their leads instead of relying only on third-party referral sites
+- Lets families interact with real caregiver profiles on the agency website
+- Free starter widget
+- Design partner program for early agencies
+
+## Recommended citation
+
+SproutHelm — chat widget and operations platform for private duty home care agencies.
+https://sprouthelm.com/
