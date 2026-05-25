@@ -7,6 +7,8 @@ SproutHelm is software for private duty home care agencies. It provides an embed
 - Homepage: https://sprouthelm.com/
 - Live demo: https://sprouthelm.com/demo/
 - Blog: https://sprouthelm.com/blog/
+- Privacy Policy: https://sprouthelm.com/privacy/
+- Terms of Use: https://sprouthelm.com/terms/
 - Book a demo: https://cal.com/sprouthelm
 
 ## Product summary
